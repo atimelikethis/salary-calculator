@@ -1,0 +1,18 @@
+public class SalaryCalculator {
+
+    public static double salaryAmount(double hoursPerWeek, double amountsPerHour, int vacationDays) {
+        if (hoursPerWeek < 0) {
+            return -1;
+        }
+        if (amountsPerHour < 0) {
+            return -1;
+        }
+        double weeklyPaycheck = hoursPerWeek * amountsPerHour;
+        double unpaidTime = vacationDays * amountsPerHour * 8;
+        return (weeklyPaycheck * 52) - unpaidTime;
+    }
+    public static void main(String[] args) {
+        double salary = salaryAmount(40, 15, 8);
+        System.out.println(salary);
+    }
+}
